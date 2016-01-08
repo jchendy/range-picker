@@ -1,0 +1,332 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+
+body {
+  padding-top: 50px;
+}
+
+.hud {
+  position: absolute;
+  width: 180px;
+  height: 45px;
+  background-color: #333333;
+  color: #dddddd;
+  z-index: 2;
+  border-radius: 4px;
+  padding-left: 5px;
+  padding-top: 3px;
+}
+
+.player1-hud {
+  left: 10%;
+  top: 20%;
+}
+
+.player2-hud {
+  left: 40%;
+  top: 15%;
+}
+
+.player3-hud {
+  right: 10%;
+  top: 20%;
+}
+
+.player4-hud {
+  right: 10%;
+  bottom: 31%;
+}
+
+.player5-hud {
+  left: 40%;
+  bottom: 22%;
+  background-color: #cccc00;
+  color: #333333;
+}
+
+.player6-hud {
+  left: 10%;
+  bottom: 31%;
+}
+
+.hand {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-color: #0000ff;
+  z-index: 1;
+}
+
+.player1-hand {
+  left: 12%;
+  top:15%;
+}
+
+.player2-hand {
+  left: 45%;
+  top:10%;
+}
+
+.player3-hand {
+  right: 12%;
+  top:15%;
+}
+
+.player4-hand {
+  right: 12%;
+  bottom: 25%;
+}
+
+.player5-hand {
+  left: 45%;
+  bottom: 16%;
+}
+
+.player6-hand {
+  left: 12%;
+  bottom: 25%;
+}
+
+.but {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #0000ff;
+  z-index: 1;
+  border-radius: 25px;
+  padding-top: 2px;
+}
+
+.player1-but {
+  left: 25%;
+  top: 30%;
+}
+
+.player2-but {
+  left: 41%;
+  top: 25%;
+}
+
+.player3-but {
+  right: 25%;
+  top: 30%;
+}
+
+.player4-but {
+  right: 25%;
+  bottom: 41%;
+}
+
+.player5-but {
+  left: 41%;
+  bottom: 32%;
+}
+
+.player6-but {
+  left: 25%;
+  bottom: 41%;
+}
+
+.bet {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background-color: #000000;
+  color: #dddddd;
+  z-index: 1;
+  padding-top: 2px;
+  border-radius: 3px;
+}
+
+.player1-bet {
+  left: 14%;
+  top: 33%;
+}
+
+.player2-bet {
+  left: 47%;
+  top: 28%;
+}
+
+.player3-bet {
+  right: 15%;
+  top: 33%;
+}
+
+.player4-bet {
+  right: 15%;
+  bottom: 43%;
+}
+
+.player5-bet {
+  left: 47%;
+  bottom: 34%;
+}
+
+.player6-bet {
+  left: 14%;
+  bottom: 43%;
+}
+
+.pot {
+  left: 44%;
+  bottom: 59%;
+  width: 100px;
+}
+
+.board-cards {
+  position: absolute;
+  z-index: 1;
+  left: 32%;
+  top: 42%;
+}
+
+.board-card {
+  width: 55px;
+  height: 75px;
+  background-color: #DDDDDD;
+  font-size: 40px;
+  float: left;
+  margin-left: 3px;
+  border-radius: 3px;
+}
+
+.board-card-s {
+  color: #000000;
+}
+
+.board-card-c {
+  color: #006600
+}
+
+.board-card-h {
+  color: #990000;
+}
+
+.board-card-d {
+  color: #000099;
+}
+
+.card {
+  height: 100%;
+  width: 66%;
+}
+
+.card2 {
+  position: absolute;
+  left: 33%;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-range {
+  width: 30px;
+  height: 30px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #CCCCCC;
+  margin: 1px;
+  font-size: 12px;
+  padding-top: 6px;
+  cursor: pointer;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.btn-action-select {
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+.btn-select {
+  width: 150px;
+  margin-bottom: 5px;
+}
+
+.btn-bet-value {
+  background-color: #EE7777;
+}
+
+.btn-bet-bluff {
+  background-color: #AA2222;
+}
+
+.btn-call {
+  background-color: #77EE77;
+}
+
+.btn-fold {
+  background-color: #7777EE;
+}
+
+.btn-check {
+  background-color: #CCFF66;
+}
+
+.btn-na {
+  background-color: #BBBBBB;
+}
+
+.btn-inactive {
+  visibility: hidden;
+}
+
+.active {
+  font-weight: bold;
+  border-color: #444444;
+  border-width: 2px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.bet-input {
+  width: 30px;
+}
+
+.street-name {
+  font-weight: bold;
+  margin-top: 10px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Range picker</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+  <body ng-controller="AppController">
+    
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Hi, my range is</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+
+<div class="row">
+
+  <div class="col-md-9">
+    <h3>Your range</h3>
+    <div style="float: left">
+      <div ng-repeat="i in utils.range(0, 12)">
+        <div ng-repeat="j in utils.range(0, 12)" ng-mousedown="select(i, j)" ng-mouseover="selectOver(i, j, $event)" ng-class="rangeButtonClass(i,j)" class="btn-range">
+          {{getRangeLabel(i, j)}}
+        </div>
+      </div>
+    </div>
+    <div style="float: left; margin-left: 7px;">
+        <span ng-repeat = "action in ['bet-value', 'bet-bluff', 'call', 'fold', 'na']">
+          <button type="button" ng-class="modeButtonClass(action)" ng-click="setActiveSelector(action)" class="btn btn-action-select btn-s">{{getName(action)}} {{getStat(action) | number:2}}%</button>
+          <span ng-if="action == 'raise'"></span>
+          <br />
+        </span>
+      <br />
+      <button type="button" ng-click="selectBroadways()" class="btn btn-s btn-select">Select broadways</button> <br />
+      <button type="button" ng-click="selectPPs()" class="btn btn-s btn-select">Select PPs</button> <br />
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+    
+
+    <!-- In production use:
+         <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+         -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="app.js"></script>
+    <script src="view1/view1.js"></script>
+    <script src="view2/view2.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+  </body>
+</html>
